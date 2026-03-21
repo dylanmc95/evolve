@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Evolve Fitness Coaching | Online &amp; Combat Sports Coaching Australia</title>
   <meta name="description" content="Evidence-based online coaching for body composition, combat sports, and enhanced athletes. Founded by Dylan in 2017. Australia-wide." />
+
+  <!-- Favicon -->
+  <link rel="icon" href="logo_only-01.png" type="image/png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Evolve Fitness Coaching | Online &amp; Combat Sports Coaching Australia" />
+  <meta property="og:description" content="Evidence-based online coaching for body composition, combat sports, and enhanced athletes. Founded by Dylan in 2017. Australia-wide." />
+  <meta property="og:image" content="fullbranding-01.png" />
+  <meta property="og:url" content="https://evolvefitnesscoaching.com.au" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -83,16 +95,7 @@
     <div class="container">
       <div class="about__grid">
         <div class="about__image-wrap" data-animate>
-          <!-- Replace .about__image-placeholder with <img src="dylan-photo.jpg" alt="Dylan - Evolve Fitness Coaching"> -->
-          <div class="about__image-placeholder">
-            <div class="about__image-inner">
-              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="100" cy="75" r="40" fill="#2d5a9e" opacity="0.9"/>
-                <ellipse cx="100" cy="160" rx="60" ry="45" fill="#2d5a9e" opacity="0.9"/>
-              </svg>
-            </div>
-            <p class="about__image-note">Add your photo here</p>
-          </div>
+          <img src="dylan-photo.jpg" alt="Dylan — Evolve Fitness Coaching" class="about__photo" />
           <div class="about__badge">
             <span class="about__badge-num">10+</span>
             <span class="about__badge-text">Years Coaching</span>
@@ -154,7 +157,7 @@
             <li>WhatsApp support</li>
             <li>Kahunas app access</li>
           </ul>
-          <a href="#contact" class="btn btn--outline">Apply Now</a>
+          <a href="https://tidycal.com/evolve-fitness-coaching/general-pop-consult-30" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Book a Call</a>
         </div>
 
         <div class="service-card service-card--featured" data-animate data-animate-delay="2">
@@ -171,7 +174,7 @@
             <li>Intra-session fuelling</li>
             <li>Performance nutrition</li>
           </ul>
-          <a href="#contact" class="btn btn--primary">Apply Now</a>
+          <a href="https://tidycal.com/evolve-fitness-coaching/performance-consult" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Book a Call</a>
         </div>
 
         <div class="service-card" data-animate data-animate-delay="3">
@@ -187,7 +190,7 @@
             <li>Supplement stack</li>
             <li>PCT support</li>
           </ul>
-          <a href="#contact" class="btn btn--outline">Apply Now</a>
+          <a href="https://tidycal.com/evolve-fitness-coaching/enhanced-consult-30" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Book a Call</a>
         </div>
 
         <div class="service-card" data-animate data-animate-delay="4">
@@ -202,7 +205,7 @@
             <li>Weekly check-ins</li>
             <li>WhatsApp support</li>
           </ul>
-          <a href="#contact" class="btn btn--outline">Apply Now</a>
+          <a href="https://tidycal.com/tess3/30-minute-meeting" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Book a Call</a>
           <p class="service-card__note">@tess.evolvefitness</p>
         </div>
 
@@ -295,7 +298,7 @@
         All programs include: personalised training program, nutrition plan, Kahunas app access, Loom video check-ins, and WhatsApp support.
       </p>
       <div class="pricing__cta">
-        <a href="#contact" class="btn btn--primary btn--large">Apply Now</a>
+        <a href="#contact" class="btn btn--primary btn--large">Book a Free Call</a>
       </div>
     </div>
   </section>
@@ -396,8 +399,7 @@
           <p class="section-eyebrow">Get In Touch</p>
           <h2 class="section-title">Ready to <span class="accent">Evolve?</span></h2>
           <p class="contact__para">
-            Fill in the form and I'll be in touch within 24 hours to book your free
-            discovery call. No obligation — just a conversation about your goals.
+            Skip the back-and-forth — pick your program below and book a free 30-minute discovery call directly. No obligation, just an honest conversation about your goals.
           </p>
           <div class="contact__details">
             <div class="contact__detail">
@@ -424,52 +426,57 @@
             </div>
           </div>
         </div>
-        <form class="contact__form" id="contact-form" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Full Name *</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required />
-            </div>
+        <div class="booking__cards">
+
+          <div class="booking-card" data-animate>
+            <div class="booking-card__icon">&#x1F3CB;&#xFE0F;</div>
+            <p class="booking-card__title">Body Composition</p>
+            <p class="booking-card__sub">Fat loss, muscle building, full transformation — with Dylan</p>
+            <a
+              href="https://tidycal.com/evolve-fitness-coaching/general-pop-consult-30"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--primary"
+            >Book a Free Call</a>
           </div>
-          <div class="form-group">
-            <label for="goal">What's your main goal? *</label>
-            <select id="goal" name="goal" required>
-              <option value="" disabled selected>Select your goal</option>
-              <option value="fat-loss">Lose body fat / transform</option>
-              <option value="build-muscle">Build muscle &amp; strength</option>
-              <option value="combat-sports">Combat sports / fight camp</option>
-              <option value="enhanced">Enhanced athlete protocol</option>
-              <option value="lifestyle">Lifestyle &amp; habits</option>
-              <option value="unsure">Not sure yet</option>
-            </select>
+
+          <div class="booking-card booking-card--featured" data-animate data-animate-delay="1">
+            <div class="booking-card__icon">&#x1F94A;</div>
+            <p class="booking-card__title">Combat Sports</p>
+            <p class="booking-card__sub">Fight camp, weight cuts, performance nutrition — with Dylan</p>
+            <a
+              href="https://tidycal.com/evolve-fitness-coaching/performance-consult"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--primary"
+            >Book a Free Call</a>
           </div>
-          <div class="form-group">
-            <label for="program">Interested in *</label>
-            <select id="program" name="program" required>
-              <option value="" disabled selected>Select a program</option>
-              <option value="dylan-weekly">Online Coaching (Dylan) — weekly</option>
-              <option value="dylan-fortnightly">Online Coaching (Dylan) — fortnightly</option>
-              <option value="tess-weekly">Lifestyle Coaching (Tess) — weekly</option>
-              <option value="tess-fortnightly">Lifestyle Coaching (Tess) — fortnightly</option>
-              <option value="unsure">Not sure yet</option>
-            </select>
+
+          <div class="booking-card" data-animate data-animate-delay="2">
+            <div class="booking-card__icon">&#x1F52C;</div>
+            <p class="booking-card__title">Enhanced Athlete</p>
+            <p class="booking-card__sub">Health-first enhanced coaching, bloodwork-driven — with Dylan</p>
+            <a
+              href="https://tidycal.com/evolve-fitness-coaching/enhanced-consult-30"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--primary"
+            >Book a Free Call</a>
           </div>
-          <div class="form-group">
-            <label for="message">Anything else I should know?</label>
-            <textarea id="message" name="message" rows="4" placeholder="Tell me a bit about your experience, schedule, or any injuries..."></textarea>
+
+          <div class="booking-card" data-animate data-animate-delay="3">
+            <div class="booking-card__icon">&#x1F33F;</div>
+            <p class="booking-card__title">Lifestyle Coaching</p>
+            <p class="booking-card__sub">Flexible, sustainable results — with Tess</p>
+            <a
+              href="https://tidycal.com/tess3/30-minute-meeting"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--primary"
+            >Book a Free Call</a>
           </div>
-          <button type="submit" class="btn btn--primary btn--large btn--full">
-            Send My Application
-          </button>
-          <p class="form-note">&#x1F512; Your info is private. I'll reply within 24 hours.</p>
-          <div class="form-success" id="form-success" hidden>
-            <span>&#x2705;</span> Application sent! I'll be in touch within 24 hours.
-          </div>
-        </form>
+
+        </div>
       </div>
     </div>
   </section>
@@ -494,6 +501,19 @@
       <p class="footer__founded">Founded by Dylan | @evolvefitnesscoaching</p>
     </div>
   </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a
+    href="https://wa.me/61412663836"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with us on WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
 
   <script src="script.js"></script>
 </body>
