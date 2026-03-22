@@ -45,43 +45,7 @@ const observer = new IntersectionObserver(
 
 animateEls.forEach(el => observer.observe(el));
 
-// --- Contact form (demo) ---
-const form = document.getElementById('contact-form');
-const successMsg = document.getElementById('form-success');
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  // Basic validation
-  let valid = true;
-  const required = form.querySelectorAll('[required]');
-  required.forEach(field => {
-    field.classList.remove('invalid');
-    if (!field.value.trim()) {
-      field.classList.add('invalid');
-      valid = false;
-    }
-  });
-
-  if (!valid) return;
-
-  // Simulate submission
-  const submitBtn = form.querySelector('[type="submit"]');
-  const originalText = submitBtn.textContent;
-  submitBtn.textContent = 'Sending...';
-  submitBtn.disabled = true;
-
-  setTimeout(() => {
-    submitBtn.style.display = 'none';
-    successMsg.hidden = false;
-    form.reset();
-  }, 1200);
-});
-
-// Remove invalid state on input
-form.querySelectorAll('input, select, textarea').forEach(field => {
-  field.addEventListener('input', () => field.classList.remove('invalid'));
-});
+// --- Contact form (removed — booking handled via TidyCal) ---
 
 // --- Smooth scroll offset for fixed nav ---
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
