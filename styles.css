@@ -465,6 +465,8 @@ ul {
 
 .about__image-wrap {
   position: relative;
+  /* allow decorative offset box to extend outside */
+  overflow: visible;
 }
 
 .about__image-placeholder {
@@ -1249,6 +1251,47 @@ ul {
   color: var(--color-text-dim);
 }
 
+/* --- Button shimmer on primary --- */
+.btn--primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.12) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+
+.btn--primary:hover::after {
+  left: 130%;
+}
+
+/* --- Footer brand area glow --- */
+.footer__brand {
+  position: relative;
+}
+
+.footer__brand::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(ellipse at center, rgba(45, 90, 158, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
 /* ===========================
    ANIMATIONS
    =========================== */
@@ -1267,6 +1310,225 @@ ul {
 [data-animate-delay="2"] { transition-delay: 0.2s; }
 [data-animate-delay="3"] { transition-delay: 0.3s; }
 [data-animate-delay="4"] { transition-delay: 0.4s; }
+
+/* ===========================
+   VISUAL ENHANCEMENTS
+   =========================== */
+
+/* --- Hero: dot grid overlay --- */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 36px 36px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* --- Hero: animated glow orb --- */
+.hero__bg::before {
+  content: '';
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(45, 90, 158, 0.18) 0%, transparent 65%);
+  top: -280px;
+  right: -220px;
+  animation: heroOrb 14s ease-in-out infinite;
+  z-index: 0;
+}
+
+.hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 45% 35% at 12% 88%, rgba(30, 58, 95, 0.14) 0%, transparent 70%);
+}
+
+@keyframes heroOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(-50px, 35px) scale(1.07); }
+  66%       { transform: translate(30px, -50px) scale(0.93); }
+}
+
+/* --- "Evolve." gradient text --- */
+.hero__headline--accent {
+  background: linear-gradient(135deg, #7ab8e8 0%, #3d7cc9 40%, #2d5a9e 80%, #1e3a5f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+
+/* --- Stat vertical dividers --- */
+.stat { position: relative; }
+
+.hero__stats .stat:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.1), transparent);
+}
+
+/* --- Section eyebrow accent bars --- */
+.about .section-eyebrow,
+.contact .section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about .section-eyebrow::before,
+.contact .section-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* Centered eyebrows — flanking lines */
+.section-eyebrow.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.section-eyebrow.center::before,
+.section-eyebrow.center::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+}
+
+.section-eyebrow.center::before {
+  background: linear-gradient(to right, transparent, var(--color-accent));
+}
+
+.section-eyebrow.center::after {
+  background: linear-gradient(to left, transparent, var(--color-accent));
+}
+
+/* --- About: decorative offset box behind photo --- */
+.about__image-wrap::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  right: -24px;
+  bottom: -24px;
+  left: 24px;
+  background: var(--color-accent-dark);
+  border-radius: var(--radius);
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.about__photo {
+  position: relative;
+  z-index: 1;
+}
+
+.about__badge {
+  z-index: 2;
+}
+
+/* --- Services: subtle grid background --- */
+.services {
+  background-image:
+    linear-gradient(rgba(45, 90, 158, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 90, 158, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-color: var(--color-bg);
+}
+
+/* --- Service cards: sliding top accent bar --- */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: linear-gradient(90deg, var(--color-accent) 0%, rgba(45, 90, 158, 0.25) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 1;
+}
+
+.service-card:hover::before,
+.service-card--featured::before {
+  opacity: 1;
+}
+
+/* --- Pricing: subtle gradient background tint --- */
+.pricing {
+  background: linear-gradient(
+    180deg,
+    var(--color-bg) 0%,
+    rgba(30, 58, 95, 0.07) 50%,
+    var(--color-bg) 100%
+  );
+}
+
+/* --- Testimonials: large decorative quote mark --- */
+.testimonial-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 6px;
+  left: 16px;
+  font-size: 7rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: rgba(45, 90, 158, 0.13);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* --- Process: slightly larger, more atmospheric step numbers --- */
+.process__step-num {
+  font-size: 4.5rem;
+  opacity: 0.1;
+  letter-spacing: -0.04em;
+}
+
+/* --- Booking cards: top bar on featured --- */
+.booking-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.booking-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: linear-gradient(90deg, var(--color-accent) 0%, rgba(45, 90, 158, 0.2) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.booking-card:hover::before,
+.booking-card--featured::before {
+  opacity: 1;
+}
 
 /* ===========================
    RESPONSIVE
